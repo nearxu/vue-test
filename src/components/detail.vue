@@ -9,6 +9,9 @@ export default {
     return {
       msg: 'hello detail'
     }
+  },
+  mounted () {
+    console.log(this.$route.query.status)
   }
 }
 </script>

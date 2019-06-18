@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>hello form</h1>
-    <k-input v-modal="username"></k-input>
+    <k-input v-model="username"></k-input>
   </div>
 </template>
 
@@ -17,6 +17,11 @@ export default {
   },
   components: {
     KInput
+  },
+  mounted () {
+    this.$on('dispatch', msg => {
+      this.msg = msg
+    })
   }
 
 }

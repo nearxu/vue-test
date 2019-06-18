@@ -4,8 +4,16 @@
     <router-link to="/foo">foo</router-link>
     <router-link to="/bar">bar</router-link>
     <router-link to="/list">list</router-link>
-    <router-link to="/input">input</router-link>
-    <router-link to="/form">form</router-link>
+    <router-link to="/data">data</router-link>
+    <router-link to="/slot">slot</router-link>
+    <router-link to="/deep-watch">deep watch</router-link>
+    <router-link
+      :to="{ name: 'detail', params: { id: '123' }, query: { status: '123' } }"
+      >detail</router-link
+    >
+    <router-link to="/tab">tab</router-link>
+    <!-- <router-link to="/input">input</router-link> -->
+    <!-- <router-link to="/form">form</router-link> -->
   </div>
 </template>
 
