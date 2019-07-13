@@ -12,6 +12,8 @@ import Slot from '@/test-demo/slot/index'
 import DeepWatch from '@/test-demo/deep-watch'
 import Tab from '@/test-demo/routes/index'
 import ContentComponent from '@/test-demo/routes/content'
+import foo1 from '@/components/foo1'
+import foo2 from '@/components/foo2'
 
 Vue.use(Router)
 
@@ -25,7 +27,20 @@ export default new Router({
     {
       path: '/foo',
       name: 'Foo',
-      component: Foo
+      component: Foo,
+      redirect: '/foo1',
+      children: [
+        {
+          path: '/foo1',
+          name: 'foo1',
+          component: foo1
+        },
+        {
+          path: '/foo2',
+          name: 'foo2',
+          component: foo2
+        }
+      ]
     },
     {
       path: '/bar',

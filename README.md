@@ -44,3 +44,33 @@ deep:true
 计算属性适合用在模板渲染中，某个值是依赖了其它的响应式对象甚至是计算属性计算而来；而侦听属性适用于观测某个值的变化去完成一段复杂的业务逻辑。
 
 
+### some need finish
+
+
+
+
+vue-router 导航守卫
+
+### eventBus
+
+data(){
+  return {
+    eventBus:new Vue()
+  }
+}
+
+mounted(){
+  this.$root.$eventBus.$on('emit',this.emit)
+}
+destroy(){
+  this.$root.$eventBus.$on('emit')
+}
+
+### some about vue life
+
+parent and child life
+
+1.parent created
+2.child created
+3.child mounted
+4.parent mounted

@@ -1,5 +1,10 @@
 <template>
-  <h2>{{ msg }}</h2>
+  <div>
+    <h2>{{ msg }}</h2>
+    <router-link :to="'/foo1'">foo1</router-link>
+    <router-link :to="'/foo2'">foo2</router-link>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
