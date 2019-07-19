@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <h2>{{ msg }}</h2>
     <button @click="toggle">toggle model</button>
     <v-model :isShow="isShow" @onClose="onClose">
@@ -60,7 +60,10 @@ export default {
 </script>
 
 <style>
-h2 {
-  color: red;
+.content {
+  width: 600px;
+  height: 800px;
+  background: red;
+  position: relative;
 }
 </style>

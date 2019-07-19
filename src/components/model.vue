@@ -1,5 +1,5 @@
 <template>
-  <div class="dialog">
+  <div class="dialog" v-if="isShow">
     <!--外层的遮罩 点击事件用来关闭弹窗，isShow控制弹窗显示 隐藏的props-->
     <div class="dialog-cover back" v-if="isShow" @click="closeMyself"></div>
     <!-- transition 这里可以加一些简单的动画效果 -->
@@ -42,14 +42,19 @@ export default {
 <style lang="scss" scoped>
 // 最外层 设置position定位
 .dialog {
-  position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   color: #2e2c2d;
   font-size: 16px;
+  z-index: 10;
 }
 // 遮罩 设置背景层，z-index值要足够大确保能覆盖，高度 宽度设置满 做到全屏遮罩
 .dialog-cover {
   background: rgba(0, 0, 0, 0.8);
-  position: fixed;
+  position: absolute;
   z-index: 200;
   top: 0;
   left: 0;
@@ -58,7 +63,7 @@ export default {
 }
 // 内容层 z-index要比遮罩大，否则会被遮盖，
 .dialog-content {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
