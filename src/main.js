@@ -3,9 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import plugin from '@/plugins'
+// import Alert from '@/plugins/alert'
+// Vue.prototype.$alert = Alert
 
 Vue.config.productionTip = false
-
+Vue.use(plugin)
 // vue on and emit
 Vue.prototype.$dispatch = function (eventName, data) {
   let parent = this.$parent

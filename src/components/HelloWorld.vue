@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>
+      <button @click="toggleAlert">alert component from body</button>
+    </h1>
     <router-link to="/foo">foo</router-link>
     <router-link to="/bar">bar</router-link>
     <router-link to="/list">list</router-link>
@@ -18,11 +20,24 @@
 </template>
 
 <script>
+import bar1 from './bar1'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      show: false
+    }
+  },
+  methods: {
+    toggleAlert () {
+      // this.$alert('hello msg from body', () => {
+      //   console.log('alert success')
+      // })
+      this.$model({ msg: 'hello', isShow: true }, bar1, () => {
+        console.log('come herer')
+        this.show = !this.show
+      })
     }
   }
 }

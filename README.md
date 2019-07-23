@@ -74,3 +74,17 @@ parent and child life
 2.child created
 3.child mounted
 4.parent mounted
+
+### 注册全局公用组价
+
+### simplec
+
+import alert
+
+Vue.use(alert)
+
+### use alert
+
+@click="this.$alert('hello world')"
+
+but how to use A component
