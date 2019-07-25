@@ -14,7 +14,7 @@ import Vue from 'vue'
 //   return instance.vm
 // }
 
-let model = (options, comps, onClose = () => { }) => {
+let model = (options, onClose = () => { }) => {
   const constructor = Vue.extend(ModelComponent)
 
   let instance = new constructor({
@@ -25,7 +25,7 @@ let model = (options, comps, onClose = () => { }) => {
   })
   instance.vm = instance.$mount()
   instance.dom = instance.vm.$el
-  instance.$children.push(comps)
+  // instance.$children.push(comps)
   document.body.appendChild(instance.dom)
   return instance.vm
 }
