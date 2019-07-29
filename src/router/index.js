@@ -14,7 +14,7 @@ import Tab from '@/test-demo/routes/index'
 import ContentComponent from '@/test-demo/routes/content'
 import foo1 from '@/components/foo1'
 import foo2 from '@/components/foo2'
-
+import Ws from '@/components/ws'
 Vue.use(Router)
 
 export default new Router({
@@ -23,6 +23,11 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: '/ws',
+      name: 'ws',
+      component: Ws
     },
     {
       path: '/foo',
