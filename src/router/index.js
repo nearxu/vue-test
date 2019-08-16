@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-06-17 15:08:22
+ * @LastEditTime: 2019-08-15 17:27:11
+ * @LastEditors: Please set LastEditors
+ */
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
@@ -15,6 +22,9 @@ import ContentComponent from '@/test-demo/routes/content'
 import foo1 from '@/components/foo1'
 import foo2 from '@/components/foo2'
 import Ws from '@/components/ws'
+import Scroll from '@/components/scroll/index'
+import Ani from '@/components/ani'
+
 Vue.use(Router)
 
 export default new Router({
@@ -25,9 +35,24 @@ export default new Router({
       component: HelloWorld
     },
     {
+      path: '/ani',
+      name: 'Ani',
+      component: Ani
+    },
+    {
+      path: '/hoc',
+      name: 'HelloWorld',
+      component: () => import('@/hoc/index')
+    },
+    {
       path: '/ws',
       name: 'ws',
       component: Ws
+    },
+    {
+      path: '/scroll',
+      name: 'scroll',
+      component: Scroll
     },
     {
       path: '/foo',

@@ -1,20 +1,15 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-06-17 15:08:22
+ * @LastEditTime: 2019-08-15 17:26:18
+ * @LastEditors: Please set LastEditors
+ -->
 <template>
   <div class="hello">
-    <h1>
-      <button @click="toggleAlert">alert component from body</button>
-    </h1>
-    <h2>
-      <transition name="showReduce">
-        <span @click="removeOutCart()">
-          321
-        </span>
-      </transition>
-
-      <transition name="fade">
-        <span class="cart_num">123</span>
-      </transition>
-    </h2>
-    <parent></parent>
+    <router-link to="/ani">Ani</router-link>
+    <router-link to="/hoc">hoc</router-link>
+    <router-link to="/scroll">scroll</router-link>
     <router-link to="/ws">ws</router-link>
     <router-link to="/foo">foo</router-link>
     <router-link to="/bar">bar</router-link>
@@ -34,7 +29,6 @@
 
 <script>
 import bar1 from './bar1'
-import Parent from './destroyed/parent'
 export default {
   name: 'HelloWorld',
   data () {
@@ -46,9 +40,6 @@ export default {
   },
   methods: {
     toggleAlert () {
-      // this.$alert('hello msg from body', () => {
-      //   console.log('alert success')
-      // })
       this.$model({ msg: 'hello', isShow: true }, bar1, () => {
         console.log('come herer')
         this.show = !this.show
@@ -60,9 +51,6 @@ export default {
       this.showMoveDot.push(true)
       this.$emit('showMoveDot', this.showMoveDot, elLeft, elBottom)
     }
-  },
-  components: {
-    'Parent': Parent
   }
 }
 </script>
