@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-17 15:08:22
- * @LastEditTime: 2019-08-15 17:26:18
+ * @LastEditTime: 2019-08-23 16:22:42
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -22,6 +22,9 @@
       >detail</router-link
     >
     <router-link to="/tab">tab</router-link>
+
+    <vuex-component></vuex-component>
+
     <!-- <router-link to="/input">input</router-link> -->
     <!-- <router-link to="/form">form</router-link> -->
   </div>
@@ -29,6 +32,8 @@
 
 <script>
 import bar1 from './bar1'
+import VuexComponent from '@/components/vuex-component.vue'
+
 export default {
   name: 'HelloWorld',
   data () {
@@ -51,6 +56,9 @@ export default {
       this.showMoveDot.push(true)
       this.$emit('showMoveDot', this.showMoveDot, elLeft, elBottom)
     }
+  },
+  components: {
+    'vuex-component': VuexComponent
   }
 }
 </script>

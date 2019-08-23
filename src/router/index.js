@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-17 15:08:22
- * @LastEditTime: 2019-08-15 17:27:11
+ * @LastEditTime: 2019-08-23 16:18:45
  * @LastEditors: Please set LastEditors
  */
 import Vue from 'vue'
@@ -24,7 +24,6 @@ import foo2 from '@/components/foo2'
 import Ws from '@/components/ws'
 import Scroll from '@/components/scroll/index'
 import Ani from '@/components/ani'
-
 Vue.use(Router)
 
 export default new Router({

@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-06-17 15:08:22
+ * @LastEditTime: 2019-08-23 16:24:21
+ * @LastEditors: Please set LastEditors
+ */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
@@ -6,6 +13,7 @@ import router from './router'
 import plugin from '@/plugins'
 // import Alert from '@/plugins/alert'
 // Vue.prototype.$alert = Alert
+import store from '@/store'
 
 Vue.config.productionTip = false
 Vue.use(plugin)
@@ -52,11 +60,11 @@ class Bus {
 }
 
 Vue.prototype.$bus = new Bus()
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
